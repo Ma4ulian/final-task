@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using Pavlo_Machulianskyi_Final_Task.PageObject;
 using System;
 using System.Collections.Generic;
@@ -20,16 +21,35 @@ namespace UnitTestProject1
 
         private IWebDriver driver;
 
-        [TestInitialize]        
+        [TestInitialize]
         public void SetUp()
-        { 
+        {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://lipsum.com/");
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
-        
+        [TestMethod]
+        [Obsolete]
+        public void CheckThatLoremIpsumIsGeneratedWithCorrectSizeWithZeroBytes()
+        {
+            HomePage homepage = new HomePage(driver);
+            SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
+            homepage._radioButton.SetValue(RadioButtonValue.bytes);
+            homepage.ClearAmountField();
+            driver.FindElement(By.XPath("//input[@id='amount']")).SendKeys("0" + Keys.Enter);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IWebElement element = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//input[@id='generate']")));
+            element.Click();
+            int actual = 0;
+            int expected = 5;
+            for (int i = 0; i < searchResultsPage.GetTextInFirstParagraph().Length; i++) actual++;
+            Assert.AreEqual(actual, expected);
+        }
+    }
+}
+        /*
         [TestMethod]
         public void CheckThatTextContainsSearchWord()
         {
@@ -86,7 +106,7 @@ namespace UnitTestProject1
             Assert.AreEqual(actual, expected);
             driver.Close();
         }
-
+        *
         [TestMethod]
         public void CheckThatLoremIpsumIsGeneratedWithCorrectSizeWithZeroWord()
         {
@@ -233,3 +253,4 @@ namespace UnitTestProject1
     }
 }
 
+*/

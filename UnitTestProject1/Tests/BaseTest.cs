@@ -12,12 +12,8 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
 {
     public class BaseTest
     {
-        private IWebDriver driver;
+        public IWebDriver driver;
 
-        public BaseTest(IWebDriver driver)
-        {
-            this.driver = driver;
-        }
 
         [TestInitialize]
         public void SetUp()
@@ -28,17 +24,13 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
-        [TearDown]
+        [TestCleanup]
         public void CleanUp()
         {
             if (driver != null)
                 driver.Quit();
         }
 
-        public BasePage GetBasePage()
-        {
-            return new BasePage(GetDriver());
-        }
 
         public HomePage GetHomePage()
         {

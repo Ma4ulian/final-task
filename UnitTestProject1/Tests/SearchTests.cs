@@ -13,40 +13,45 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
     [TestClass]
     public class SearchTests : BaseTest
     {
-        private IWebDriver _driver;
-       
-        public SearchTests(IWebDriver driver) : base(driver)
-        {
-            PageFactory.InitElements(driver, this);
-            _driver = driver;
-        }
 
 
         [TestMethod]
-        public void CheckThatLoremIpsumIsNotSee()
+        public void CheckThatLoremIpsumIsMissingInFirstParagraph()
         {
-            HomePage homepage = new HomePage(_driver);
+            HomePage homepage = new HomePage(driver);
+            SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
             homepage.ClickOnStartRadioButton();
             homepage.ClickOnGenerateButton();
-            Assert.IsFalse(homepage.GetTextInFirstParagraph().Contains("Lorem ipsum"));
+            if (searchResultsPage.GetTextInFirstParagraph().Contains("Lorem ipsum"))
+                Assert.Fail("Lorem ipsum contains on the page");
+            else 
+                Assert.IsFalse(searchResultsPage.GetTextInFirstParagraph().Contains("Lorem ipsum"));
+
         }
 
         [TestMethod]
         public void CheckThatTextContainsSearchWord()
         {
-            HomePage homepage = new HomePage(_driver);
+            HomePage homepage = new HomePage(driver);
+            SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
             homepage.ClickOnLanguageButton();
-            Assert.IsTrue(homepage.SearchWordName("рыба").Text.Contains("рыба"));
-            _driver.Close();
+            if (searchResultsPage.SearchWordName("рыба").Text.Contains("рыба"))
+                Assert.IsTrue(searchResultsPage.SearchWordName("рыба").Text.Contains("рыба"));
+            else
+                Assert.Fail("The word рыба is missing from the page");                
         }
 
         [TestMethod]
         public void CheckThatTextContainsSearchString()
         {
-            HomePage homepage = new HomePage(_driver);
+            HomePage homepage = new HomePage(driver);
+            SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
             homepage.ClickOnGenerateButton();
-            Assert.IsTrue(homepage.SearchFirstSentence().Text.Contains("Lorem ipsum dolor sit amet, consectetur adipiscing elit"));
-            _driver.Close();
+            if (searchResultsPage.SearchFirstSentence().Text.Contains("Lorem ipsum dolor sit amet, consectetur adipiscing elit"))
+                Assert.IsTrue(searchResultsPage.SearchFirstSentence().Text.Contains("Lorem ipsum dolor sit amet, consectetur adipiscing elit"));
+            else
+                Assert.Fail("Search string is missing in the first sentence");
+
         }
     }
 }

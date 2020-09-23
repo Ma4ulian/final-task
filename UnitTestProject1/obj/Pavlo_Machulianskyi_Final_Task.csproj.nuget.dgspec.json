@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pashka\\Desktop\\EPAM\\ПРОЕКТ\\UnitTestProject1\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj": {}
+    "C:\\Users\\Pashka\\Desktop\\EPAM\\Final Task\\final-task\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pashka\\Desktop\\EPAM\\ПРОЕКТ\\UnitTestProject1\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj": {
+    "C:\\Users\\Pashka\\Desktop\\EPAM\\Final Task\\final-task\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pashka\\Desktop\\EPAM\\ПРОЕКТ\\UnitTestProject1\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj",
+        "projectUniqueName": "C:\\Users\\Pashka\\Desktop\\EPAM\\Final Task\\final-task\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj",
         "projectName": "Pavlo_Machulianskyi_Final_Task",
-        "projectPath": "C:\\Users\\Pashka\\Desktop\\EPAM\\ПРОЕКТ\\UnitTestProject1\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj",
+        "projectPath": "C:\\Users\\Pashka\\Desktop\\EPAM\\Final Task\\final-task\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj",
         "packagesPath": "C:\\Users\\Pashka\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pashka\\Desktop\\EPAM\\ПРОЕКТ\\UnitTestProject1\\UnitTestProject1\\obj\\",
+        "outputPath": "C:\\Users\\Pashka\\Desktop\\EPAM\\Final Task\\final-task\\UnitTestProject1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pashka\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -78,6 +78,18 @@
               "target": "Package",
               "version": "[85.0.4183.8300, )"
             },
+            "SpecFlow": {
+              "target": "Package",
+              "version": "[3.4.8, )"
+            },
+            "SpecFlow.MsTest": {
+              "target": "Package",
+              "version": "[3.4.8, )"
+            },
+            "SpecFlow.Tools.MsBuild.Generation": {
+              "target": "Package",
+              "version": "[3.4.8, )"
+            },
             "coverlet.collector": {
               "target": "Package",
               "version": "[1.2.0, )"
@@ -98,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
