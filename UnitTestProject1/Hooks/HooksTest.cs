@@ -1,16 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Pavlo_Machulianskyi_Final_Task.PageObject;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnitTestProject1.PageObject;
 
-namespace Pavlo_Machulianskyi_Final_Task.Tests
+namespace Pavlo_Machulianskyi_Final_Task.Hooks
 {
-    public class BaseTest
+    public class HooksTest
     {
         public IWebDriver driver;
 
@@ -31,7 +28,6 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
                 driver.Quit();
         }
 
-
         public HomePage GetHomePage()
         {
             return new HomePage(GetDriver());
@@ -46,6 +42,7 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
         {
             return driver;
         }
-    }
 
+
+    }
 }

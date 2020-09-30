@@ -3,16 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UnitTestProject1.PageObject;
+using Pavlo_Machulianskyi_Final_Task.Elements;
 
 namespace Pavlo_Machulianskyi_Final_Task.PageObject
 {
-    public enum RadioButtonValue
-    {
-        paragraphs,
-        words,
-        bytes,
-        lists
-    }
+
     public class RadioButton
     {
         private readonly IWebElement _wordsWebElement;
@@ -27,27 +22,27 @@ namespace Pavlo_Machulianskyi_Final_Task.PageObject
             _listsWebElement = listsWebElement;
         }
 
-        public void SetValue(RadioButtonValue radioButtonValue)
+        public void SetValue(Id radioButtonValue)
         {
             switch (radioButtonValue)
             {
-                case RadioButtonValue.paragraphs:
+                case Id.paras:
                     _paragraphsWebElement.Click();
                     break;
-                case RadioButtonValue.words:
+                case Id.words:
                     _wordsWebElement.Click();
                     break;
-                case RadioButtonValue.bytes:
+                case Id.bytes:
                     _bytesWebElement.Click();
                     break;
-                case RadioButtonValue.lists:
+                case Id.lists:
                     _listsWebElement.Click();
                     break;
                 default:
-                    break; 
+                    break;
             }
 
         }
-        
+
     }
 }

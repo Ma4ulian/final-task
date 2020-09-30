@@ -6,12 +6,13 @@ using SeleniumExtras.PageObjects;
 using UnitTestProject1.PageObject;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pavlo_Machulianskyi_Final_Task.PageObject;
-
+using Pavlo_Machulianskyi_Final_Task.Elements;
+using Pavlo_Machulianskyi_Final_Task.Hooks;
 
 namespace Pavlo_Machulianskyi_Final_Task.Tests
 {
     [TestClass]
-    public class LoremTests : BaseTest
+    public class LoremTests : HooksTest
     {
 
         [DataTestMethod]
@@ -23,8 +24,9 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
         public void CheckThatLoremIpsumIsGeneratedWithCorrectSizeWithWords(int inputNumbersOfWords, int expectedNumbersOfWordsOnThePage)
         {
             HomePage homepage = new HomePage(driver);
+            homepage.Navigate();
             SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
-            homepage._radioButton.SetValue(RadioButtonValue.words);
+            homepage.radioButton.SetValue(Id.words);
             homepage.ClearAmountField();
             homepage.InputAmountValues(inputNumbersOfWords);
             homepage.ClickOnGenerateButton();
@@ -32,7 +34,7 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
             int actualNumbersOfWordsOnThePage = 1;
             for (int i = 0; i < searchResultsPage.GetTextInFirstParagraph().Length; i++)
             {
-                if (searchResultsPage.GetTextInFirstParagraph()[i] == ' ')
+                if (searchResultsPage.GetTextInFirstParagraph()[i] == ' ') 
                 {
                     actualNumbersOfWordsOnThePage++;
                 }
@@ -48,8 +50,9 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
         public void CheckThatLoremIpsumIsGeneratedWithCorrectSizeWithBytes(int inputNumbersOfBytes, int expectedNumbersOfBytesOnThePage)
         {
             HomePage homepage = new HomePage(driver);
+            homepage.Navigate();
             SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
-            homepage._radioButton.SetValue(RadioButtonValue.bytes);
+            homepage.radioButton.SetValue(Id.bytes);
             homepage.ClearAmountField();
             homepage.InputAmountValues(inputNumbersOfBytes);
             homepage.ClickOnGenerateButton();
@@ -57,10 +60,7 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
             int actualNumbersOfBytesOnThePage = 0;
             for (int i = 0; i < searchResultsPage.GetTextInFirstParagraph().Length; i++)
             {
-                if (searchResultsPage.GetTextInFirstParagraph()[i] == ' ')
-                {
-                    actualNumbersOfBytesOnThePage++;
-                }
+                actualNumbersOfBytesOnThePage++;               
             }
             Assert.AreEqual(actualNumbersOfBytesOnThePage, expectedNumbersOfBytesOnThePage);
         }

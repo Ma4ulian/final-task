@@ -39,9 +39,20 @@ namespace Pavlo_Machulianskyi_Final_Task.PageObject
             return driver.FindElement(By.XPath($"//div[@id='Panes']//p[contains(text(),'{searchWordInTheFirstSentence}')]"));
         }
 
-        public IWebElement SearchFirstSentence()
+        public IWebElement SearchFirstSentence(string searchSringInTheFirstSentence)
         {
             return driver.FindElement(By.XPath("//*[@id='lipsum']/p[1]"));
+        }
+
+        public int GetNumbersOfBytesOnThePage(int inputNumbersOfBytesOnThePage, HomePage homePage)
+        {
+            int actualNumbersOfBytesOnThePage = 0;
+            homePage.GenerateAsBytesWithStartText(inputNumbersOfBytesOnThePage);
+            for (int i = 0; i < GetTextInFirstParagraph().Length; i++)
+            {
+                actualNumbersOfBytesOnThePage++;
+            }
+            return actualNumbersOfBytesOnThePage;
         }
     }
 }

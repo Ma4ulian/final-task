@@ -7,26 +7,25 @@ using System.Collections.Generic;
 using System.Linq;
 using UnitTestProject1.PageObject;
 using Pavlo_Machulianskyi_Final_Task.PageObject;
+using Pavlo_Machulianskyi_Final_Task.Hooks;
 
 namespace Pavlo_Machulianskyi_Final_Task.Tests
 {
     [TestClass]
-    public class SearchTests : BaseTest
+    public class SearchTests : HooksTest
     {
-
+        private const string loremIpsum = "Lorem ipsum";
+        private const string searchWord = "рыба";
+        private const string searchString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit";
 
         [TestMethod]
         public void CheckThatLoremIpsumIsMissingInFirstParagraph()
         {
             HomePage homepage = new HomePage(driver);
             SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
-            homepage.ClickOnStartRadioButton();
+            homepage.ClickOnStartButton();
             homepage.ClickOnGenerateButton();
-            if (searchResultsPage.GetTextInFirstParagraph().Contains("Lorem ipsum"))
-                Assert.Fail("Lorem ipsum contains on the page");
-            else 
-                Assert.IsFalse(searchResultsPage.GetTextInFirstParagraph().Contains("Lorem ipsum"));
-
+            Assert.IsFalse(searchResultsPage.GetTextInFirstParagraph().Contains(loremIpsum), "Lorem ipsum contains on the page");
         }
 
         [TestMethod]
@@ -35,10 +34,7 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
             HomePage homepage = new HomePage(driver);
             SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
             homepage.ClickOnLanguageButton();
-            if (searchResultsPage.SearchWordName("рыба").Text.Contains("рыба"))
-                Assert.IsTrue(searchResultsPage.SearchWordName("рыба").Text.Contains("рыба"));
-            else
-                Assert.Fail("The word рыба is missing from the page");                
+            Assert.IsTrue(searchResultsPage.SearchWordName(searchWord).Text.Contains(searchWord), $"The word {searchWord} is missing from the page");           
         }
 
         [TestMethod]
@@ -47,11 +43,7 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
             HomePage homepage = new HomePage(driver);
             SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
             homepage.ClickOnGenerateButton();
-            if (searchResultsPage.SearchFirstSentence().Text.Contains("Lorem ipsum dolor sit amet, consectetur adipiscing elit"))
-                Assert.IsTrue(searchResultsPage.SearchFirstSentence().Text.Contains("Lorem ipsum dolor sit amet, consectetur adipiscing elit"));
-            else
-                Assert.Fail("Search string is missing in the first sentence");
-
+            Assert.IsTrue(searchResultsPage.SearchFirstSentence(searchString).Text.Contains(searchString), "Search string is missing in the first sentence");
         }
     }
 }
