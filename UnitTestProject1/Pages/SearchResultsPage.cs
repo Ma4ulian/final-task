@@ -54,5 +54,19 @@ namespace Pavlo_Machulianskyi_Final_Task.PageObject
             }
             return actualNumbersOfBytesOnThePage;
         }
+
+        public int GetNumbersOfWordsOnThePage(int inputNumbersOfWordsOnThePage, HomePage homePage)
+        {
+            int actualNumbersOfWordsOnThePage = 1;
+            homePage.GenerateAsWordsWithStartText(inputNumbersOfWordsOnThePage);
+            for (int i = 0; i < GetTextInFirstParagraph().Length; i++)
+            {
+                if (GetTextInFirstParagraph()[i] == ' ')
+                {
+                    actualNumbersOfWordsOnThePage++;
+                }
+            }
+            return actualNumbersOfWordsOnThePage;
+        }
     }
 }

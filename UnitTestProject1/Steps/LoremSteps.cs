@@ -45,17 +45,9 @@ namespace Pavlo_Machulianskyi_Final_Task.Steps
         [When(@"I generate (.*) words of text with default starting text")]
         public void WhenIGenerateWordsOfText(int inputNumbersOfWordsOnThePage)
         {
-            _homepage.GenerateAsWordsWithStartText(inputNumbersOfWordsOnThePage);
-            for (int i = 0; i < _searchPage.GetTextInFirstParagraph().Length; i++)
-            {
-                if (_searchPage.GetTextInFirstParagraph()[i] == ' ')
-                {
-                    actualNumbersOfWordsOnThePage++;
-                }
-            }
-            _testData.ActualNumbersOfWordsOnThePage = actualNumbersOfWordsOnThePage;
+            _testData.ActualNumbersOfWordsOnThePage = _searchPage.GetNumbersOfWordsOnThePage(inputNumbersOfWordsOnThePage, _homepage);
         }
-
+        
         [Then(@"(.*) words has been found on the page")]
         public void ThenWordsOfTextGeneratesAndExactMatchIsTrue(int expectedNumbersOfWordsOnThePage)
         {

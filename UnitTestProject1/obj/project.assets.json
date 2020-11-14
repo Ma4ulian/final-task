@@ -6451,11 +6451,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pashka\\Desktop\\EPAM\\Final Task\\final-task\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj",
+      "projectUniqueName": "E:\\EPAM\\Final Task\\final-task\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj",
       "projectName": "Pavlo_Machulianskyi_Final_Task",
-      "projectPath": "C:\\Users\\Pashka\\Desktop\\EPAM\\Final Task\\final-task\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj",
+      "projectPath": "E:\\EPAM\\Final Task\\final-task\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj",
       "packagesPath": "C:\\Users\\Pashka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pashka\\Desktop\\EPAM\\Final Task\\final-task\\UnitTestProject1\\obj\\",
+      "outputPath": "E:\\EPAM\\Final Task\\final-task\\UnitTestProject1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Pashka\\AppData\\Roaming\\NuGet\\NuGet.Config",

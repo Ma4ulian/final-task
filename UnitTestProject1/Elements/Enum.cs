@@ -4,11 +4,12 @@ using System.Text;
 
 namespace Pavlo_Machulianskyi_Final_Task.Elements
 {
-    public enum Id
-    {
-        paras,
-        words,
-        bytes,
-        lists
-    }
+
+        public enum Id
+        {
+            paras,
+            words,
+            bytes,
+            lists
+        }
 }

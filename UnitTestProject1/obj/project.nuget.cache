@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JJ8ET9m7ucxFgGxaJB9zRV9wIbIWqr4+38bUNjO4Aan9dWenNK5yLprPP9ll7VB7/rKuUX59kIXHIHYSNcODxw==",
+  "dgSpecHash": "vvLM1CCZIONmJNaHQI1eBwowwcqlr04Gcr8KQa3rXf8giVrt0jFm0kWAYl6Mll6XKZww4yX5bLKMjSyCB8IGXw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pashka\\Desktop\\EPAM\\Final Task\\final-task\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj",
+  "projectFilePath": "E:\\EPAM\\Final Task\\final-task\\UnitTestProject1\\Pavlo_Machulianskyi_Final_Task.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pashka\\.nuget\\packages\\bodi\\1.4.1\\bodi.1.4.1.nupkg.sha512",
     "C:\\Users\\Pashka\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",

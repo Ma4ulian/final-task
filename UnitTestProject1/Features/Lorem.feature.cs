@@ -91,6 +91,15 @@ namespace Pavlo_Machulianskyi_Final_Task.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 4
+#line hidden
+#line 5
+testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
         public virtual void GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage(string amount, string expectedAmount, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -104,7 +113,7 @@ namespace Pavlo_Machulianskyi_Final_Task.Features
             argumentsOfScenario.Add("amount", amount);
             argumentsOfScenario.Add("expectedAmount", expectedAmount);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generation of x-bytes equls to actual numbers of bytes on the page", null, tagsOfScenario, argumentsOfScenario);
-#line 6
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -124,13 +133,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 8
- testRunner.When(string.Format("I generate {0} bytes of text with default starting text", amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 4
+this.FeatureBackground();
 #line hidden
 #line 9
+ testRunner.When(string.Format("I generate {0} bytes of text with default starting text", amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 10
  testRunner.Then(string.Format("{0} bytes has been found on the page", expectedAmount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -146,7 +155,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedAmount", "5")]
         public virtual void GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage_0()
         {
-#line 6
+#line 8
 this.GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage("0", "5", ((string[])(null)));
 #line hidden
         }
@@ -160,7 +169,7 @@ this.GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage("0", "5", ((string[
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedAmount", "3")]
         public virtual void GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage_1()
         {
-#line 6
+#line 8
 this.GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage("1", "3", ((string[])(null)));
 #line hidden
         }
@@ -174,7 +183,7 @@ this.GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage("1", "3", ((string[
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedAmount", "5")]
         public virtual void GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage_5()
         {
-#line 6
+#line 8
 this.GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage("5", "5", ((string[])(null)));
 #line hidden
         }
@@ -188,7 +197,7 @@ this.GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage("5", "5", ((string[
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedAmount", "10")]
         public virtual void GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage_10()
         {
-#line 6
+#line 8
 this.GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage("10", "10", ((string[])(null)));
 #line hidden
         }
@@ -206,7 +215,7 @@ this.GenerationOfX_BytesEqulsToActualNumbersOfBytesOnThePage("10", "10", ((strin
             argumentsOfScenario.Add("amount", amount);
             argumentsOfScenario.Add("expectedAmount", expectedAmount);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Generation of x-words equls to actual numbers of words on the page", null, tagsOfScenario, argumentsOfScenario);
-#line 19
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -226,8 +235,8 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 20
- testRunner.Given("I am on the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 4
+this.FeatureBackground();
 #line hidden
 #line 21
  testRunner.When(string.Format("I generate {0} words of text with default starting text", amount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -248,7 +257,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedAmount", "10")]
         public virtual void GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage_10()
         {
-#line 19
+#line 20
 this.GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage("10", "10", ((string[])(null)));
 #line hidden
         }
@@ -262,7 +271,7 @@ this.GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage("10", "10", ((strin
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedAmount", "5")]
         public virtual void GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage_1()
         {
-#line 19
+#line 20
 this.GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage("-1", "5", ((string[])(null)));
 #line hidden
         }
@@ -276,7 +285,7 @@ this.GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage("-1", "5", ((string
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedAmount", "5")]
         public virtual void GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage_0()
         {
-#line 19
+#line 20
 this.GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage("0", "5", ((string[])(null)));
 #line hidden
         }
@@ -290,7 +299,7 @@ this.GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage("0", "5", ((string[
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedAmount", "5")]
         public virtual void GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage_5()
         {
-#line 19
+#line 20
 this.GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage("5", "5", ((string[])(null)));
 #line hidden
         }
@@ -304,7 +313,7 @@ this.GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage("5", "5", ((string[
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:expectedAmount", "20")]
         public virtual void GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage_20()
         {
-#line 19
+#line 20
 this.GenerationOfX_WordsEqulsToActualNumbersOfWordsOnThePage("20", "20", ((string[])(null)));
 #line hidden
         }

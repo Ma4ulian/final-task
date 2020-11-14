@@ -13,6 +13,18 @@ namespace UnitTestProject1.PageObject
         public RadioButton radioButton;
         public string url = "https://lipsum.com/";
 
+        [FindsBy(How = How.XPath, Using = "//input[@id='generate']")]
+        private IWebElement generateButton;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id='start']")]
+        private IWebElement startButton;
+
+        [FindsBy(How = How.XPath, Using = "//div[@id='Languages']/a[@class='ru']")]
+        private IWebElement languageButton;
+
+        [FindsBy(How = How.XPath, Using = "//input[@id='amount']")]
+        private IWebElement Amount;
+
         public HomePage(IWebDriver driver)
         {
             PageFactory.InitElements(driver, this);
@@ -22,7 +34,6 @@ namespace UnitTestProject1.PageObject
         public void Navigate()
         {
             driver.Navigate().GoToUrl(url);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             IWebElement wordElement = GetWebElementById(Id.words);
             IWebElement bytesElement = GetWebElementById(Id.bytes);
             IWebElement paragraphsElement = GetWebElementById(Id.paras);
@@ -31,21 +42,6 @@ namespace UnitTestProject1.PageObject
         }
 
         private IWebElement GetWebElementById(Id id) => driver.FindElement(By.XPath($"//input[@id='{id}']"));
-
-        [FindsBy(How = How.XPath, Using = "//input[@id='generate']")]
-        public IWebElement generateButton;
-        
-        [FindsBy(How = How.XPath, Using = "//input[@id='start']")]
-        public IWebElement startButton;
-
-        [FindsBy(How = How.XPath, Using = "//div[@id='Languages']/a[@class='ru']")]
-        public IWebElement languageButton;
-
-        [FindsBy(How = How.XPath, Using = "//input[@id='amount']")]
-        public IWebElement clearAmount;
-
-        [FindsBy(How = How.XPath, Using = "//input[@id='amount']")]
-        public IWebElement inputAmount;
   
         public void ClickOnGenerateButton()
         {
@@ -64,26 +60,26 @@ namespace UnitTestProject1.PageObject
 
         public void ClearAmountField()
         {
-            clearAmount.Clear();
+            Amount.Clear();
         }
 
         public void InputAmountValues(int inputAmountValues)
         {
-            inputAmount.SendKeys(inputAmountValues.ToString());
+            Amount.SendKeys(inputAmountValues.ToString());
         }
 
         public void GenerateAsWordsWithStartText(int inputAmountValues)
         {
-            clearAmount.Clear();
-            inputAmount.SendKeys(inputAmountValues.ToString());
+            Amount.Clear();
+            Amount.SendKeys(inputAmountValues.ToString());
             radioButton.SetValue(Id.words);
             generateButton.Click();
         }
 
         public void GenerateAsBytesWithStartText(int inputAmountValues)
         {
-            clearAmount.Clear();
-            inputAmount.SendKeys(inputAmountValues.ToString());
+            Amount.Clear();
+            Amount.SendKeys(inputAmountValues.ToString());
             radioButton.SetValue(Id.bytes);
             generateButton.Click();
         }

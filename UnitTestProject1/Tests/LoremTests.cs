@@ -8,6 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pavlo_Machulianskyi_Final_Task.PageObject;
 using Pavlo_Machulianskyi_Final_Task.Elements;
 using Pavlo_Machulianskyi_Final_Task.Hooks;
+using System.Linq;
 
 namespace Pavlo_Machulianskyi_Final_Task.Tests
 {
@@ -34,7 +35,7 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
             int actualNumbersOfWordsOnThePage = 1;
             for (int i = 0; i < searchResultsPage.GetTextInFirstParagraph().Length; i++)
             {
-                if (searchResultsPage.GetTextInFirstParagraph()[i] == ' ') 
+                if (searchResultsPage.GetTextInFirstParagraph()[i] == ' ')
                 {
                     actualNumbersOfWordsOnThePage++;
                 }
@@ -60,7 +61,7 @@ namespace Pavlo_Machulianskyi_Final_Task.Tests
             int actualNumbersOfBytesOnThePage = 0;
             for (int i = 0; i < searchResultsPage.GetTextInFirstParagraph().Length; i++)
             {
-                actualNumbersOfBytesOnThePage++;               
+                actualNumbersOfBytesOnThePage++;
             }
             Assert.AreEqual(actualNumbersOfBytesOnThePage, expectedNumbersOfBytesOnThePage);
         }
